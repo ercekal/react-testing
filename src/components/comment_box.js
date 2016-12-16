@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connet } from 'react-redux';
+import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 class CommentBox extends Component {
@@ -22,10 +22,14 @@ class CommentBox extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit.bind(this)} className="comment-box">
+        <h4>Add a comment</h4>
+        <div>
         <textarea
           value={this.state.comment}
           onChange={this.handleChange.bind(this)} />
+          </div>
         <button>Submit Comment</button>
+
       </form>
     );
   }
